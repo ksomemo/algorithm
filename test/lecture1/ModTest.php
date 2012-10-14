@@ -4,7 +4,7 @@ require_once __DIR__.'/../../src/lecture1/Mod.php';
 
 class ModTest extends PHPUnit_Framework_TestCase
 {
-    public function testPowmodAllOne()
+    public function testPowmodAllOneToZero()
     {
         $actual = Mod::powmod(1, 1, 1);
 
