@@ -4,12 +4,18 @@ class Mod
 {
     public static function powmod($divided, $exponent, $divisor)
     {
-        $dividedExponent = 1;
-
-        for ($i = 1; $i <= $exponent; $i++) {
-            $dividedExponent *= $divided;
+        if ($exponent === 0) {
+            return 1;
         }
 
-        return $dividedExponent % $divisor;
+        $mod = self::powmod($divided, (int)($exponent / 2), $divisor);
+
+        $mod = ($mod * $mod) % $divisor;
+
+        if ($exponent % 2 === 1) {
+            $mod = ($mod * $divided) % $divisor;
+        }
+
+        return (int)$mod;
     }
 }

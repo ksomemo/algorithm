@@ -22,4 +22,12 @@ class ModTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    public function testPowmodAllIntMax()
+    {
+        $actual = mod::powmod(PHP_INT_MAX, PHP_INT_MAX, PHP_INT_MAX);
+
+        $expected = 0;
+
+        $this->assertEquals($expected, $actual);
+    }
 }
