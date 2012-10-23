@@ -14,6 +14,11 @@ class SearchTest extends PHPUnit_Framework_Testcase
         }
     }
 
+    public function testDummyForSetUp()
+    {
+        $this->assertTrue(true, 'This test is a dummy.');
+    }
+
     public function test100ContainsIn1to10000000RangeArray()
     {
         $v = 100;
