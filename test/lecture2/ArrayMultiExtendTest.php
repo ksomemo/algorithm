@@ -11,4 +11,13 @@ class ArrayMultiExtendTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($expected, $actual);
     }
+
+    public function testCalcCopyCountPush20FactorsToArrayDefaultSize10andExtendsSize2times()
+    {
+        $actual = ArrayMultiExtend::calcCopyCount(10, 2, 20);
+
+        $expected = 30;
+
+        $this->assertEquals($expected, $actual);
+    }
 }

@@ -7,5 +7,12 @@ class ArrayMultiExtend
         if ($pushSize <= $defaultSize) {
             return $pushSize;
         }
+
+        $copyCount = $defaultSize * $extendSize;
+        $restPushSize = $pushSize - $defaultSize;
+
+        if ( $restPushSize <= $defaultSize * ($extendSize - 1) ) {
+            return $copyCount + $restPushSize;
+        }
     }
 }
