@@ -25,7 +25,16 @@ class ArrayExtendTest extends PHPUnit_Framework_TestCase
     {
         $actual = ArrayExtend::calcCopyCount(10, 10, 100);
 
-        $expected =550;
+        $expected = 550;
+
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testCalcCopyCountPush101FactorsToArrayDefaultSize10andExtendsSize10()
+    {
+        $actual = ArrayExtend::calcCopyCount(10, 10, 101);
+
+        $expected = 651;
 
         $this->assertEquals($expected, $actual);
     }
