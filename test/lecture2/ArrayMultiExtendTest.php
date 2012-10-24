@@ -29,4 +29,22 @@ class ArrayMultiExtendTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($expected, $actual);
     }
+
+    public function testCalcCopyCountPush160FactorsToArrayDefaultSize10andExtendsSize2times()
+    {
+        $actual = ArrayMultiExtend::calcCopyCount(10, 2, 160);
+
+        $expected = 310;
+
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testCalcCopyCountPush161FactorsToArrayDefaultSize10andExtendsSize2times()
+    {
+        $actual = ArrayMultiExtend::calcCopyCount(10, 2, 161);
+
+        $expected = 471;
+
+        $this->assertEquals($expected, $actual);
+    }
 }
