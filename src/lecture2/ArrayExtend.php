@@ -8,12 +8,10 @@ class ArrayExtend
             return $pushSize;
         }
 
-        $copyCount    = $defaultSize + $extendSize;
-        $restPushSize = $pushSize    - $extendSize;
+        // 初期サイズ～格納したい数より大きい初期サイズの倍数 の等差数列と、
+        // 格納したい数の和がコピー数となる
+        $extendNum = (int)($pushSize / $extendSize) - 1;
 
-        if ( $restPushSize <= $extendSize ) {
-            return $copyCount + $restPushSize;
-        }
-
+        return $extendNum * ( 2 * $defaultSize + ($extendNum - 1) * $defaultSize) / 2 + $pushSize;
     }
 }
