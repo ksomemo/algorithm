@@ -2,9 +2,15 @@
 
 class SingllyLinkedList
 {
+    private $fisrt;
 
     public function getFirstNode()
     {
-        return null;
+        return $this->fisrt;
+    }
+
+    public function add($singllyLinkedListNode)
+    {
+        $this->fisrt = $singllyLinkedListNode;
     }
 }
