@@ -5,12 +5,16 @@ require_once __DIR__.'/../../src/lecture2/SingllyLinkedListNode.php';
 
 class SingllyLinkedListTest extends PHPUnit_Framework_TestCase
 {
+    private $singllyLinkedList;
+
+    public function setUp()
+    {
+        $this->singllyLinkedList = new SingllyLinkedList();
+    }
 
     public function testNullIsFirstNodeInEmpltyList()
     {
-        $singllyLinkedList = new SingllyLinkedList();
-
-        $firstNode = $singllyLinkedList->getFirstNode();
+        $firstNode = $this->singllyLinkedList->getFirstNode();
 
         $expected = null;
 
@@ -19,13 +23,11 @@ class SingllyLinkedListTest extends PHPUnit_Framework_TestCase
 
     public function testAddFirstNodeValue1AndGetFirstNodeValueIs1()
     {
-        $singllyLinkedList = new SingllyLinkedList();
-
         $singllyLinkedListNode = new SingllyLinkedListNode(1);
 
-        $singllyLinkedList->add($singllyLinkedListNode);
+        $this->singllyLinkedList->add($singllyLinkedListNode);
 
-        $firstNode = $singllyLinkedList->getFirstNode();
+        $firstNode = $this->singllyLinkedList->getFirstNode();
 
         $actual = $firstNode->getValue();
 
