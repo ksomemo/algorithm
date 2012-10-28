@@ -14,7 +14,7 @@ class SingllyLinkedListTest extends PHPUnit_Framework_TestCase
 
     public function testNullIsFirstNodeInEmpltyList()
     {
-        $firstNode = $this->singllyLinkedList->getFirstNode();
+        $firstNode = $this->singllyLinkedList->getFirst();
 
         $expected = null;
 
@@ -27,7 +27,7 @@ class SingllyLinkedListTest extends PHPUnit_Framework_TestCase
 
         $this->singllyLinkedList->add($singllyLinkedListNode);
 
-        $firstNode = $this->singllyLinkedList->getFirstNode();
+        $firstNode = $this->singllyLinkedList->getFirst();
 
         $actual = $firstNode->getValue();
 
@@ -42,7 +42,7 @@ class SingllyLinkedListTest extends PHPUnit_Framework_TestCase
         $this->singllyLinkedList->add(new SingllyLinkedListNode(2));
         $this->singllyLinkedList->add(new SingllyLinkedListNode(3));
 
-        $firstNode   = $this->singllyLinkedList->getFirstNode();
+        $firstNode   = $this->singllyLinkedList->getFirst();
         $firstNodeAt = $this->singllyLinkedList->getAt(1);
         $secondNode  = $this->singllyLinkedList->getAt(2);
         $thirdNode   = $this->singllyLinkedList->getAt(3);
@@ -82,7 +82,7 @@ class SingllyLinkedListTest extends PHPUnit_Framework_TestCase
 
         $expected = 1;
 
-        $this->assertSame($expected, $this->singllyLinkedList->getFirstNode()->getValue());
+        $this->assertSame($expected, $this->singllyLinkedList->getFirst()->getValue());
     }
 
     public function testAddNodeValue1AtFisrtAndAddNodeValue2AtFisrtAndSecondNodeValueIs1()

@@ -5,7 +5,7 @@ class SingllyLinkedList
 {
     private $fisrt;
 
-    public function getFirstNode()
+    public function getFirst()
     {
         return $this->fisrt;
     }
