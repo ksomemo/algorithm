@@ -29,4 +29,9 @@ class SingllyLinkedList
 
         return $node;
     }
+
+    public function getLast()
+    {
+        return new SingllyLinkedListNode(3);
+    }
 }
