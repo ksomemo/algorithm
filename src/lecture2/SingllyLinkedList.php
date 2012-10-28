@@ -32,6 +32,10 @@ class SingllyLinkedList
 
     public function getLast()
     {
-        return new SingllyLinkedListNode(3);
+        if ($this->fisrt->getNext() === null) {
+            return $this->fisrt;
+        }
+
+        return $this->fisrt->getNext()->getLast();
     }
 }

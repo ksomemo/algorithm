@@ -29,4 +29,13 @@ class SingllyLinkedListNode
     {
         return $this->next;
     }
+
+    public function getLast()
+    {
+        if ($this->next === null) {
+            return $this;
+        }
+
+        return $this->next->getLast();
+    }
 }
