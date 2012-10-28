@@ -10,12 +10,12 @@ class SingllyLinkedList
         return $this->fisrt;
     }
 
-    public function add(SingllyLinkedListNode $singllyLinkedListNode)
+    public function add(SingllyLinkedListNode $node)
     {
         if ($this->fisrt === null) {
-            $this->fisrt = $singllyLinkedListNode;
+            $this->fisrt = $node;
         } else {
-            $this->fisrt->add($singllyLinkedListNode);
+            $this->fisrt->add($node);
         }
     }
 
@@ -39,14 +39,14 @@ class SingllyLinkedList
         return $this->fisrt->getNext()->getLast();
     }
 
-    public function addFirst(SingllyLinkedListNode $singllyLinkedListNode)
+    public function addFirst(SingllyLinkedListNode $node)
     {
         if ($this->fisrt === null) {
-            $this->fisrt = $singllyLinkedListNode;
+            $this->fisrt = $node;
         } else {
-            $singllyLinkedListNode->setNext($this->fisrt);
+            $node->setNext($this->fisrt);
 
-            $this->fisrt = $singllyLinkedListNode;
+            $this->fisrt = $node;
         }
     }
 }

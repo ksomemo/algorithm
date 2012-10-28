@@ -16,12 +16,12 @@ class SingllyLinkedListNode
         return $this->value;
     }
 
-    public function add(SingllyLinkedListNode $singllyLinkedListNode)
+    public function add(SingllyLinkedListNode $node)
     {
         if ($this->next === null) {
-            $this->next = $singllyLinkedListNode;
+            $this->next = $node;
         } else {
-            $this->next->add($singllyLinkedListNode);
+            $this->next->add($node);
         }
     }
 
@@ -39,8 +39,8 @@ class SingllyLinkedListNode
         return $this->next->getLast();
     }
 
-    public function setNext(SingllyLinkedListNode $singllyLinkedListNode)
+    public function setNext(SingllyLinkedListNode $node)
     {
-        $this->next = $singllyLinkedListNode;
+        $this->next = $node;
     }
 }
