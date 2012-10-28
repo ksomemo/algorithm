@@ -49,4 +49,17 @@ class TreeTest extends PHPUnit_Framework_TestCase
         $this->assertSame(false, $tree->contains(4));
 
     }
+
+    public function testInsertThreeNodes2And1And3()
+    {
+        $tree     = new Tree();
+
+        $tree->insert(2);
+        $tree->insert(1);
+        $tree->insert(3);
+
+        $this->assertSame(2, $tree->getRoot()->getValue());
+        $this->assertSame(1, $tree->getRoot()->getLeft()->getValue());
+        $this->assertSame(3, $tree->getRoot()->getRight()->getValue());
+    }
 }

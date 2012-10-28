@@ -49,4 +49,38 @@ class Tree
         }
     }
 
+    public function insert($value)
+    {
+        if ($this->root === null) {
+            $this->root = new TreeNode($value);
+
+            return;
+        }
+
+        // rootの値と比較
+        // 以下なら左、大きいなら右
+        // それがnullならノード設定、あるなら値比較
+
+        $node = $this->root;
+
+        while (true) {
+            if ($value <= $node->getValue()) {
+                if ($node->getLeft() === null) {
+                    $node->setLeft(new TreeNode($value));
+
+                    break;
+                } else {
+                    $node = $node->getLeft();
+                }
+            } else {
+                if ($node->getRight() === null) {
+                    $node->setRight(new TreeNode($value));
+
+                    break;
+                } else {
+                    $node = $node->getRight();
+                }
+            }
+        }
+    }
 }
