@@ -41,6 +41,12 @@ class SingllyLinkedList
 
     public function addFirst(SingllyLinkedListNode $singllyLinkedListNode)
     {
-        $this->fisrt = $singllyLinkedListNode;
+        if ($this->fisrt === null) {
+            $this->fisrt = $singllyLinkedListNode;
+        } else {
+            $singllyLinkedListNode->setNext($this->fisrt);
+
+            $this->fisrt = $singllyLinkedListNode;
+        }
     }
 }

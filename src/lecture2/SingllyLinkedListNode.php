@@ -38,4 +38,9 @@ class SingllyLinkedListNode
 
         return $this->next->getLast();
     }
+
+    public function setNext(SingllyLinkedListNode $singllyLinkedListNode)
+    {
+        $this->next = $singllyLinkedListNode;
+    }
 }
