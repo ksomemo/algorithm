@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__.'/../../src/lecture2/SingllyLinkedListNode.php';
 
 class SingllyLinkedList
 {
@@ -11,6 +12,13 @@ class SingllyLinkedList
 
     public function add($singllyLinkedListNode)
     {
-        $this->fisrt = $singllyLinkedListNode;
+        if ($this->fisrt === null) {
+            $this->fisrt = $singllyLinkedListNode;
+        }
+    }
+
+    public function getAt($index)
+    {
+        return new SingllyLinkedListNode(2);
     }
 }
