@@ -38,4 +38,9 @@ class SingllyLinkedList
 
         return $this->fisrt->getNext()->getLast();
     }
+
+    public function addFirst(SingllyLinkedListNode $singllyLinkedListNode)
+    {
+        $this->fisrt = $singllyLinkedListNode;
+    }
 }

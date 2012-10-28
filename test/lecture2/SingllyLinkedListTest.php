@@ -75,4 +75,13 @@ class SingllyLinkedListTest extends PHPUnit_Framework_TestCase
         $this->assertSame($expected2, $lastNode2->getValue());
         $this->assertSame($expected3, $lastNode3->getValue());
     }
+
+    public function testAddNodeValue1AtFisrt()
+    {
+        $this->singllyLinkedList->addFirst(new SingllyLinkedListNode(1));
+
+        $expected = 1;
+
+        $this->assertSame($expected, $this->singllyLinkedList->getFirstNode()->getValue());
+    }
 }
