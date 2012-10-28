@@ -15,4 +15,18 @@ class SingllyLinkedListNode
     {
         return $this->value;
     }
+
+    public function add(SingllyLinkedListNode $singllyLinkedListNode)
+    {
+        if ($this->next === null) {
+            $this->next = $singllyLinkedListNode;
+        } else {
+            $this->next->add($singllyLinkedListNode);
+        }
+    }
+
+    public function getNext()
+    {
+        return $this->next;
+    }
 }

@@ -10,15 +10,23 @@ class SingllyLinkedList
         return $this->fisrt;
     }
 
-    public function add($singllyLinkedListNode)
+    public function add(SingllyLinkedListNode $singllyLinkedListNode)
     {
         if ($this->fisrt === null) {
             $this->fisrt = $singllyLinkedListNode;
+        } else {
+            $this->fisrt->add($singllyLinkedListNode);
         }
     }
 
     public function getAt($index)
     {
-        return new SingllyLinkedListNode(2);
+        $node = $this->fisrt;
+
+        for ($i = 1; $i < $index; ++$i) {
+            $node = $node->getNext();
+        }
+
+        return $node;
     }
 }
