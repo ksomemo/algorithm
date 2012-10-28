@@ -29,4 +29,24 @@ class TreeTest extends PHPUnit_Framework_TestCase
         $tree->replace($tree->getRoot(), null, $newRight);
         $this->assertSame(3, $tree->getRoot()->getRight()->getValue());
     }
+
+    public function testContainsRootAndLeftAndRightNode()
+    {
+        $tree     = new Tree();
+
+        $newRoot = new TreeNode(1);
+        $tree->replace(null, null, $newRoot);
+
+        $newLeft = new TreeNode(2);
+        $tree->replace($tree->getRoot(), null, $newLeft);
+
+        $newRight = new TreeNode(3);
+        $tree->replace($tree->getRoot(), null, $newRight);
+
+        $this->assertSame(true,  $tree->contains(1));
+//        $this->assertSame(true,  $tree->contains(2));
+        $this->assertSame(true,  $tree->contains(3));
+        $this->assertSame(false, $tree->contains(4));
+
+    }
 }

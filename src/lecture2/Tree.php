@@ -26,4 +26,27 @@ class Tree
             throw new RuntimeException('子供が見つからなかった');
         }
     }
+
+    public function contains($value)
+    {
+        return $this->containsInNode($this->root, $value);
+    }
+
+    private function containsInNode(TreeNode $node = null, $value)
+    {
+        if ($node === null) {
+            return false;
+        }
+
+        if ($node->getValue() === $value) {
+            return true;
+        }
+
+        if ($value < $node->getValue()) {
+            return $this->containsInNode($node->getLeft(), $value);
+        } else {
+            return $this->containsInNode($node->getRight(), $value);
+        }
+    }
+
 }
